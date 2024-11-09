@@ -1,0 +1,277 @@
+﻿@using HealthCare.Models
+@model HealthCare.Models.ProjectViewModel
+
+<!-- Views/Home/Index.cshtml -->
+@{
+    ViewData["Title"] = "Index";
+}
+<!-- fixed buttons html -->
+<section>
+    <div class="fixed-buttons">
+        <button class="btnside job-btn">LOOKING FOR A JOB?</button>
+        <button class="btnside call-btn">
+            <i class="bi bi-telephone-fill"></i> CALL NOW
+        </button>
+    </div>
+</section>
+
+<div class="hero_banner">
+    <img src="~/Content/Img/banner.png" class="for-desk" />
+    <img src="~/Content/Img/banner.png" class="for-mob" />
+</div>
+
+<div class="info-section">
+    <h2 class="info-title">Personalised Physiotherapy for a Stronger, Independent You</h2>
+    <p class="info-decs"><b>Aaroyagya Clinic and Physiotherapy Center</b> provides comprehensive physiotherapy and rehabilitation services to enhance your mobility and overall health. With personalized treatment plans, certified and background-verified experts, and the latest equipment, we help you recover and regain strength.</p>
+</div>
+
+<!-- Contact Us Section -->
+<div id="contact" class="contact_container">
+    <h3 class="text-center mb-4">Consult for expert care!</h3>
+
+    <div class="d-flex justify-content-center mb-4">
+        <button class="btn btn-primary job-btn">LOOKING FOR A JOB</button>
+    </div>
+    <form id="contactForm" action="@Url.Action("SubmitContactForm", "Home")" method="post">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" name="Name" placeholder="Enter your name" minlength="2" required>
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" name="Email" placeholder="Enter your email" required>
+            </div>
+        </div>
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="phone" class="form-label">Phone no.</label>
+                <input type="tel" class="form-control" id="phone" name="Phone" placeholder="Enter 10-digit mobile No." pattern="^[6-9]\d{9}$" required>
+            </div>
+            <div class="col-md-6">
+                <label for="city" class="form-label">Address</label>
+                <input class="form-control" id="city" name="City" placeholder="Enter Your Address" required>
+                @*<select class="form-select" id="city" name="City"  required>
+                        <option value="">--Select--</option>
+                        <option value="North Delhi">North Delhi</option>
+                        <option value="South Delhi">South Delhi</option>
+                        <option value="Noida">Noida</option>
+                        <option value="Gurgaon">Gurgaon</option>
+                        <option value="Faridabad">Faridabad</option>
+                    </select>*@
+            </div>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary subbtn w-100 submit-btn">Submit</button>
+        </div>
+    </form>
+</div>
+
+<!-- Services Section -->
+<section id="services" class="services-section">
+    <div class="scroll-container">
+        <button class="prev-btn">
+            <i class="bi bi-arrow-left-circle"></i> <!-- Left Arrow Icon -->
+        </button>
+
+        <div class="item-list" style="display: flex; overflow-x: auto; white-space: nowrap;">
+            @if (Model.Services != null && Model.Services.Count > 0)
+            {
+                foreach (var service in Model.Services)
+                {
+                    <div class="item">
+                        <img src="@Url.Content(service.Image)" alt="@service.ServiceName" />
+                        <h5>@service.ServiceType</h5>
+                        <p>@service.ServiceDescription</p>
+                    </div>
+                }
+            }
+            else
+            {
+                <p>No services available.</p>
+            }
+        </div>
+        <button class="next-btn">
+            <i class="bi bi-arrow-right-circle"></i> <!-- Right Arrow Icon -->
+        </button>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section id="work">
+    <div id="service_section">
+        <div class="services-head">
+            <span class="heading-line"></span>
+            <h2>Comprehensive Care, Seamlessly Delivered</h2>
+            <span class="heading-line"></span>
+        </div>
+        <div class="services_Content">
+            <div class="service_usp">
+                <span>
+                    <img src="~/Content/Img/service1.svg" alt="service" />
+                </span>
+                <p>
+                    Advanced Clinical
+                    <br />
+                    Protocols
+                </p>
+            </div>
+            <div class="service_usp">
+                <span>
+                    <img src="~/Content/Img/service2.svg" alt="service" />
+                </span>
+                <p>
+                    Comprehensive Care
+                    <br />
+                    Tailored to Your Needs
+                </p>
+            </div>
+            <div class="service_usp">
+                <span>
+                    <img src="~/Content/Img/service3.svg" alt="service" />
+                </span>
+                <p>
+                    Holistic Care
+                    <br />
+                    Solutions
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Logos -->
+<div class="footer_logos">
+    @*<img src="~/Content/Img/maxlife.png" class="max_img" />*@
+    <div class="footer_three_logos">
+        <img src="~/Content/Img/work1.png" class="footer_logo" />
+        <img src="~/Content/Img/logo.png" class="footer_logo" />
+        <img src="~/Content/Img/work2.png" class="footer_logo" />
+    </div>
+</div>
+
+<!-- Google map API -->
+<div style="width: 100%; overflow: hidden; margin: 0; padding: 0;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3609.4825618325735!2d80.9194444!3d25.2206667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDEzJzE0LjQiTiA4MMKwNTUnMTAuMCJF!5e0!3m2!1sen!2sin!4v1730205821317!5m2!1sen!2sin" width="100%" height="330" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
+
+<!-- jQuery Script -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+            // Smooth scrolling for all anchor links
+            $('.navbar-nav .nav-link').on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault(); // Prevent default anchor behavior
+
+                    var target = this.hash;
+                    $('html, body').animate(
+                        {
+                            scrollTop: $(target).offset().top - 70 // Adjust offset for fixed navbar
+                        },
+                        800 // Duration in ms (800ms = 0.8s)
+                    );
+
+                    // Update active class for the clicked link
+                    $('.navbar-nav .nav-link').removeClass('active');
+                    $(this).addClass('active');
+                }
+            });
+
+            // Change active link on scroll
+            $(window).on('scroll', function () {
+                var scrollPos = $(document).scrollTop() + 80; // Adjust offset
+
+                $('.navbar-nav .nav-link').each(function () {
+                    var section = $(this.hash);
+
+                    if (
+                        section.position().top <= scrollPos &&
+                        section.position().top + section.height() > scrollPos
+                    ) {
+                        $('.navbar-nav .nav-link').removeClass('active');
+                        $(this).addClass('active');
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            const itemWidth = $('.item').outerWidth(true); // Get the width of each item including margin
+            const scrollContainer = $('.item-list');
+
+            // Scroll to the next item
+            $('.next-btn').on('click', function () {
+                scrollContainer.animate({
+                    scrollLeft: '+=' + itemWidth // Move to the next item
+                }, 300); // Animation duration
+            });
+
+            // Scroll to the previous item
+            $('.prev-btn').on('click', function () {
+                scrollContainer.animate({
+                    scrollLeft: '-=' + itemWidth // Move to the previous item
+                }, 300); // Animation duration
+            });
+        });
+
+
+
+    $(document).ready(function () {
+        // jQuery form validation on submit
+        $('#contactForm').on('submit', function (e) {
+            e.preventDefault(); // Prevent default form submission
+
+            let isValid = true;
+
+            // Validate name (min length 2)
+            if ($('#name').val().length < 2) {
+                alert('Name must be at least 2 letters.');
+                isValid = false;
+            }
+
+            // Validate phone number (Indian format: starts with 6-9 and has 10 digits)
+            const phonePattern = /^[6-9]\d{9}$/;
+            if (!phonePattern.test($('#phone').val())) {
+                alert('Please enter a valid 10-digit Indian mobile number.');
+                isValid = false;
+            }
+
+            // Validate email
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+            if (!emailPattern.test($('#email').val())) {
+                alert('Please enter a valid email address.');
+                isValid = false;
+            }
+
+            // If all validations pass, show success alert and submit the form
+            if (isValid) {
+                alert('Thank You! for your intrest, We call you soon.'); // Show success message
+                $('#loadingOverlay').show();
+                this.submit(); // Submit the form
+            }
+        });
+    });
+
+    $(document).ready(function () {
+        $('.call-btn').on('click', function () {
+            window.location.href = 'tel: +91 9670702912'; // Replace with your phone number
+        });
+
+        $('.job-btn').on('click', function () {
+            // Make an AJAX request to get the phone number from the server
+            $.ajax({
+                url: '@Url.Action("GetPhoneNumber", "Home")',
+                type: 'GET',
+                success: function (response) {
+                    // Trigger the phone call using the 'tel:' protocol
+                    window.location.href = 'tel:' + response.PhoneNumber;
+                },
+                error: function () {
+                    alert('Failed to retrieve the phone number.');
+                }
+            });
+        });
+    });
+</script>

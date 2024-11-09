@@ -1,0 +1,69 @@
+﻿{
+  "appName": "Arogya physiotherapy and slimming centre",
+  "details": {
+    "title": "Arogya physiotherapy and slimming centre",
+    "subTitle": "Your Health, Our Priority"
+  },
+  "services": [
+    {
+      "image": "~/Content/Img/footer1.png",
+      "serviceType": "Physiotherapy",
+      "serviceName": "Manual Therapy",
+      "serviceDescription": "Advanced manual therapy techniques."
+    },
+    {
+      "image": "~/Content/Img/footer1.png",
+      "serviceType": "Rehabilitation",
+      "serviceName": "Post-Surgery Rehab",
+      "serviceDescription": "Comprehensive post-surgical rehabilitation."
+    },
+    {
+      "image": "~/Content/Img/logo.png",
+      "serviceType": "Rehabilitation",
+      "serviceName": "Post-Surgery Rehab",
+      "serviceDescription": "Comprehensive post-surgical rehabilitation."
+    },
+    {
+      "image": "~/Content/Img/pixelcut-export.png",
+      "serviceType": "Rehabilitation",
+      "serviceName": "Post-Surgery Rehab",
+      "serviceDescription": "Comprehensive post-surgical rehabilitation."
+    },
+    {
+      "image": "~/Content/Img/physiotheripy.png",
+      "serviceType": "Rehabilitation",
+      "serviceName": "Post-Surgery Rehab",
+      "serviceDescription": "Comprehensive post-surgical rehabilitation."
+    },
+    {
+      "image": "~/Content/Img/medical_loading.gif",
+      "serviceType": "Rehabilitation",
+      "serviceName": "Post-Surgery Rehab",
+      "serviceDescription": "Comprehensive post-surgical rehabilitation."
+    },
+    {
+      "image": "~/Content/Img/logo_HealthCare.png",
+      "serviceType": "Rehabilitation",
+      "serviceName": "Post-Surgery Rehab",
+      "serviceDescription": "Comprehensive post-surgical rehabilitation."
+    },
+    {
+      "image": "~/Content/Img/maxlife.png",
+      "serviceType": "Rehabilitation",
+      "serviceName": "Post-Surgery Rehab",
+      "serviceDescription": "Comprehensive post-surgical rehabilitation."
+    }
+  ],
+  "copyright": "FlutX Technology 2024 | Arogya physiotherapy and slimming centre",
+  "address": "Chakrehi Churaha, Ganga ji road, Bardhaman Pathology ke samne, Karwi (210205)",
+  "email": "anandcktd41@gmail.com, arogyaphysiotherapyweb@gmail.com",
+  "mobile": "+91 9670702912, +91 9584430780",
+
+  "socialLinks": {
+    "facebook": "https://www.facebook.com/yourpage",
+    "twitter": "https://www.twitter.com/yourprofile",
+    "youtube": "https://www.youtube.com/yourchannel",
+    "instagram": "https://www.instagram.com/yourprofile",
+    "linkedin": "https://www.linkedin.com/in/yourprofile"
+  }
+}
