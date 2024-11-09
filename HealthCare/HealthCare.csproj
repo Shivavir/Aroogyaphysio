@@ -172,9 +172,9 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Data\projectDetails.json" />
-    <None Include="Dockerfile" />
+    <None Include="HealthCare.Dockerfile" />
     <None Include=".dockerignore">
-      <DependentUpon>Dockerfile</DependentUpon>
+      <DependentUpon>HealthCare.Dockerfile</DependentUpon>
     </None>
     <None Include="Scripts\jquery-3.7.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.7.1.js" />
