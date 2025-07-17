@@ -1,0 +1,246 @@
+﻿@using YourFitnessAlly.Models
+@model YourFitnessAlly.Models.ProjectViewModel
+
+@{
+    ViewBag.Title = "Contact Us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="text-center mb-4">
+                <h1 class="display-5">🧘‍♀️ Contact Us</h1>
+                <h4 class="text-primary">Let’s Connect with Purpose and Positivity</h4>
+                <p class="mt-3">
+                    Whether you’re here to explore yoga for the first time, seek relief from back pain or stress, or simply want to feel better inside and out — I’m so glad you’ve found your way here.
+                </p>
+                <p>
+                    If you have any questions, want to book a free trial session, or just need guidance on where to begin, I’m here for you.
+                </p>
+            </div>
+
+            <div class="mb-4">
+                <h5>📬 Reach Out Anytime</h5>
+                <p>📧 Email: @Model.Contact.Email</p>
+                <p>📱 Instagram DM: <a href="@Model.SocialLinks.Instagram" target="_blank">Roshni Joshi</a></p>
+                <p>💬 I usually respond within 24 hours. For urgent messages, please DM on Instagram.</p>
+            </div>
+
+            <div class="mb-4">
+                <h5>✨ Want to Begin Your Yoga Journey?</h5>
+                <p>➡️ <a href="#" id="openForm" class="text-decoration-underline">Fill out the contact form</a> to claim your free trial session or book a personalized 1:1 yoga consultation.</p>
+                <p>Let’s build your strength, restore your calm, and find your flow — together.</p>
+            </div>
+
+            <div class="text-end mt-5">
+                <p class="fst-italic">With love and light,</p>
+                <h5 class="fw-bold">Roshni Joshi</h5>
+                <p>Your Yoga Ally</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 🧘 Popup Form -->
+<div id="popupForm" class="popup-form d-none">
+    <div class="form-container position-relative rounded p-4 shadow">
+        <button id="closeForm" type="button" title="close" class="btn-close position-absolute top-0 end-0 m-3"></button>
+
+        <h4 class="mb-3">Join Your Free Intro Yoga Class</h4>
+        <p class="mb-4 small">We’re excited to meet you! Please fill in a few details below so we can book your complimentary class or personalized session.</p>
+
+        <form id="yogaForm" novalidate>
+            <div class="mb-3">
+                <label for="name" class="form-label">*Your Name</label>
+                <input type="text" id="name" name="name" class="form-control" required minlength="2">
+            </div>
+
+            <div class="mb-3">
+                <label for="age" class="form-label">*Your Age (Yrs)</label>
+                <input type="number" id="age" name="age" class="form-control" placeholder="e.g. 30" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="goal" class="form-label">*Your Main Goal or Concern</label>
+                <input type="text" id="goal" name="goal" class="form-control" required minlength="3">
+            </div>
+
+            <div class="mb-3">
+                <label for="mobile" class="form-label">*Phone Number</label>
+                <input type="tel" id="mobile" name="mobile" class="form-control" placeholder="+91 9876543210" required>
+            </div>
+
+            <div class="mb-3">
+                <label for="email" class="form-label">*Email ID</label>
+                <input type="email" id="email" name="email" class="form-control" required>
+            </div>
+
+            <div class="form-check mb-3">
+                <input type="checkbox" class="form-check-input" id="allowMessage" required>
+                <label class="form-check-label" for="allowMessage">Can we send you the class invite via WhatsApp or email?</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary w-100">Submit</button>
+        </form>
+    </div>
+</div>
+
+<!-- 🔧 Styling for Popup -->
+<style>
+    .popup-form {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1055;
+        padding: 40px 15px; /* ✅ Add top & bottom padding */
+        box-sizing: border-box;
+        overflow-y: auto;
+    }
+
+    .form-container {
+        position: relative;
+        background-color: #fff;
+        background-image: url('/Content/Img/Uplifting Yoga Logo for Ally with Abstract Lotus.png');
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: 150px;
+        background-blend-mode: lighten;
+        max-width: 600px;
+        width: 100%;
+        padding: 30px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        margin: auto;
+        border-radius: 10px;
+    }
+
+        .form-container::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: rgba(255, 255, 255, 0.8); /* Light overlay */
+            z-index: 0;
+            border-radius: 10px;
+        }
+
+        .form-container * {
+            position: relative;
+            z-index: 1;
+        }
+
+    @@media (max-width: 576px) {
+        .popup-form {
+            padding: 20px 10px;
+        }
+
+        .form-container {
+            padding: 20px;
+        }
+    }
+</style>
+
+<!-- ✅ jQuery Logic for Popup -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+
+        // Show popup form
+        $('#openForm').click(function (e) {
+            e.preventDefault();
+            $('#popupForm').removeClass('d-none');
+        });
+
+        // Hide popup form
+        $('#closeForm').click(function () {
+            $('#popupForm').addClass('d-none');
+        });
+
+        // Form validation and AJAX submission
+        $('#yogaForm').on('submit', function (e) {
+            e.preventDefault();
+
+            const name = $('#name').val().trim();
+            const age = parseInt($('#age').val());
+            const goal = $('#goal').val().trim();
+            const mobile = $('#mobile').val().trim();
+            const email = $('#email').val().trim();
+            const allowMsg = $('#allowMessage').is(':checked');
+
+            // Validations
+            const emailPattern = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
+
+            if (name.length < 2) {
+                alert("Name must be at least 2 characters.");
+                return;
+            }
+
+            if (!(age >= 10 && age <= 99)) {
+                alert("Age must be a 2-digit number (10–99).");
+                return;
+            }
+
+            if (goal.length < 3) {
+                alert("Goal must be at least 3 characters.");
+                return;
+            }
+
+            if (!/^\+\d{1,3}\s?\d{10}$/.test(mobile)) {
+                alert("Use format like +91 9876543210.");
+                return;
+            }
+
+            if (!emailPattern.test(email)) {
+                alert("Please enter a valid email address.");
+                return;
+            }
+
+            if (!allowMsg) {
+                alert("Please allow us to message you.");
+                return;
+            }
+
+            // ✅ Create form data object
+            const formData = {
+                name: name,
+                age: age,
+                goal: goal,
+                mobile: mobile,
+                email: email,
+                allowMessage: allowMsg
+            };
+
+            // ✅ Console log for verification
+            console.log("Sending formData to controller:", formData);
+
+            // ✅ Submit to ASP.NET MVC controller
+            $.ajax({
+                url: '@Url.Action("SubmitContact", "Home")',
+                type: 'POST',
+                data: formData,
+                success: function (res) {
+                    console.log("Response from server:", res);
+                    if (res.success) {
+                        alert("Form submitted successfully!");
+                        $('#popupForm').addClass('d-none');
+                        $('#yogaForm')[0].reset();
+                    } else {
+                        alert("Something went wrong. Try again.");
+                    }
+                },
+                error: function (err) {
+                    console.error("Error submitting form:", err);
+                    alert("Submission failed. Please try again.");
+                }
+            });
+        });
+    });
+</script>
+
+

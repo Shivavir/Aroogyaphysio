@@ -1,0 +1,152 @@
+﻿@using YourFitnessAlly.Models
+@model YourFitnessAlly.Models.ProjectViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @*<title>@Model.Details.Title</title>*@
+
+    <link href="~/Content/img/Uplifting Yoga Logo for Ally with Abstract Lotus.png" rel="icon">
+    <link href="~/Content/img/Uplifting Yoga Logo for Ally with Abstract Lotus.png" rel="apple-touch-icon">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" />
+
+    <!-- Optional Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="~/Content/CSS/Style.css" />
+    <style>
+        #loadingOverlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999; /* Make sure it's on top of other content */
+        }
+
+        #loadingImage {
+            width: auto; /* Adjust size as needed */
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <!-- Full-Screen Loading Overlay -->
+    <div id="loadingOverlay">
+        <img src="~/Content/Img/Yoga_Loading.gif" alt="Loading..." id="loadingImage">
+    </div>
+
+    <!-- Header Section -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
+            <div class="container-fluid">
+                <section id="home" style="margin-top: 0; padding: 0;">
+                    <a class="navbar-brand" href="">
+                        <img src="~/Content/Img/Uplifting Yoga Logo for Ally with Abstract Lotus.png" alt="UourFitnessAlly" height="50" href="@Url.Action("Index", "Home")">
+                    </a>
+                </section>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="@Url.Action("Index", "Home")">Home</a>
+                        </li>
+
+                        @*<li class="nav-item">
+                            <a class="nav-link" href="#services">Services</a>
+                        </li>*@
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("Contact", "Home")">Contact</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="@Url.Action("About", "Home")">About</a>
+                        </li>
+                        @*<li class="nav-item">
+                            <a class="nav-link" href="#work">Work</a>
+                        </li>*@
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content Area -->
+    <main role="main">
+        @RenderBody()
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="footer bg-dark-maroon text-white py-4">
+        <div class="container">
+            <div class="row">
+
+                <!-- Section 1: Project Details -->
+                <div class="col-md-4 col-12 mb-3">
+                    @*<h5>Project Details</h5>
+                        <strong>Project Title:</strong>*@ <p><strong>@Model.AppName</strong></p>
+                        <p><strong>Email ID:</strong> 
+                           <a href="mailto:@Model.Contact.Email" class="text-decoration-none">
+                               @Model.Contact.Email
+                           </a>
+                    </p>
+                        <p><strong>Contact No.:</strong> 
+                           <a href="tel:@Model.Contact.Mobile" class="text-decoration-none">
+                               @Model.Contact.Mobile
+                           </a>
+                    </p>
+                        @*<p><strong>Address:</strong> @Model.Address</p>*@
+                    </div>
+
+                    <!-- Section 2: Copyright Information -->
+                <div class="col-md-4 col-12 mb-3 text-center d-flex flex-column justify-content-center">
+                    <p>
+                        <b>Copyrights:</b>
+                    <p>&copy; @DateTime.Now.Year @Model.Copyright.YourFitnessAlly</p>
+                    <p>@Model.Copyright.FlutxTechnology</p>
+                    </p>
+                    <a href="@Url.Action("Privacy", "Home")" class="text-decoration-none" style="color: inherit;">Privacy & Policy</a>
+                </div>
+
+                    <!-- Section 3: Social Media Icons -->
+                    <div class="col-md-4 col-12 mb-3 text-center">
+                        <h5>Follow Us</h5>
+                        <div class="social-icons">
+                            @*<a href="@Model.SocialLinks.Facebook" class="fa fa-facebook"></a>
+                            <a href="@Model.SocialLinks.Twitter" class="fa fa-twitter"></a>
+                            <a href="@Model.SocialLinks.LinkedIn" class="fa fa-linkedin"></a>
+                            <a href="@Model.SocialLinks.Youtube" class="fa fa-youtube"></a>*@
+                            <a href="@Model.SocialLinks.Instagram" title="Roshani_Joshi" class="fa fa-instagram" target="_blank"></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </footer>
+
+        <script>
+            // Show loading overlay on page load
+            document.addEventListener('DOMContentLoaded', function () {
+                document.getElementById('loadingOverlay').style.display = 'flex';
+            });
+            window.addEventListener("load", function () {
+                // Hide the loading overlay once the page is fully loaded
+                document.getElementById("loadingOverlay").style.display = "none";
+            });
+        </script>
+
+    </body>
+</html>

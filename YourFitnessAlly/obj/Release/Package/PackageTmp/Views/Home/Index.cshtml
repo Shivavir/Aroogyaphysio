@@ -1,0 +1,410 @@
+﻿@using YourFitnessAlly.Models
+@model YourFitnessAlly.Models.ProjectViewModel
+
+<!-- Views/Home/Index.cshtml -->
+@{
+    ViewData["Title"] = "Index";
+}
+
+<style>
+    .vivekananda-section {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        margin: 40px auto;
+        max-width: 1200px;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .vivekananda-image {
+        flex: 1 1 300px;
+        text-align: center;
+    }
+
+    .vivekananda-image img {
+        width: 100%;
+        max-width: 350px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .vivekananda-content {
+        flex: 2 1 500px;
+    }
+
+        .vivekananda-content h2 {
+            font-size: 28px;
+            color: #5a0e25;
+            margin-bottom: 20px;
+        }
+
+    .yoga-block {
+        margin-bottom: 30px;
+        padding: 20px;
+        border-left: 4px solid #5a0e25;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+    }
+
+        .yoga-block h3 {
+            font-size: 22px;
+            color: #5a0e25;
+            margin-bottom: 10px;
+        }
+
+    .yoga-block p {
+        margin: 6px 0;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    .quote {
+        font-style: italic;
+        color: #555;
+        margin: 10px 0;
+    }
+
+    @@media (max-width: 768px) {
+        .vivekananda-section {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .vivekananda-content h2 {
+            text-align: center;
+        }
+
+        .vivekananda-image img {
+            max-width: 250px;
+        }
+    }
+</style>
+<!-- fixed buttons html -->
+<section>
+    <div class="fixed-buttons">
+        @*<button class="btnside job-btn">LOOKING FOR A JOB?</button>*@
+        <button class="btnside call-btn">
+            <i class="bi bi-telephone-fill"></i> CALL NOW
+        </button>
+    </div>
+</section>
+
+<div class="hero_banner">
+    <img src="~/Content/Img/SuryaNamaskar.jpg" class="for-desk" />
+    <img src="~/Content/Img/SuryaNamaskar.jpg" class="for-mob" />
+</div>
+
+<div class="info-section">
+    <h2 class="info-title">Personalised Physiotherapy for a Stronger, Independent You</h2>
+    <p class="info-decs"><b>Aaroyagya Clinic and Physiotherapy Center</b> provides comprehensive physiotherapy and rehabilitation services to enhance your mobility and overall health. With personalized treatment plans, certified and background-verified experts, and the latest equipment, we help you recover and regain strength.</p>
+</div>
+
+<!-- Contact Us Section -->
+<div id="contact" class="contact_container">
+    <h2 class="mb-4 text-center">Join Your Free Intro Yoga Class</h2>
+    <p class="mb-5 text-center small">We’re excited to meet you! Please fill in a few details below so we can book your complimentary class or personalized session.</p>
+
+    @*<div class="d-flex justify-content-center mb-4">
+        <button class="btn btn-primary job-btn">LOOKING FOR A JOB</button>
+    </div>*@
+    <form id="contactForm" action="@Url.Action("SubmitContactForm", "Home")" method="post">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="name" class="form-label">*Your Name</label>
+                <input type="text" class="form-control" id="name" name="name" required minlength="2">
+            </div>
+            <div class="col-md-6">
+                <label for="age" class="form-label">*Your Age (Yrs)</label>
+                <input type="number" class="form-control" id="age" name="age" placeholder="e.g. 30" required>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label for="goal" class="form-label">*Your Main Goal or Concern</label>
+            <input type="text" class="form-control" id="goal" name="goal" required minlength="3">
+        </div>
+
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label for="mobile" class="form-label">*Phone Number</label>
+                <input type="tel" class="form-control" id="mobile" name="mobile" placeholder="+91 9876543210" required>
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">*Email ID</label>
+                <input type="email" class="form-control" id="email" name="email" required>
+            </div>
+        </div>
+        <div class="form-check mb-4">
+            <input type="checkbox" class="form-check-input" id="allowMessage" required>
+            <label class="form-check-label" for="allowMessage">Can we send you the class invite via WhatsApp or email?</label>
+        </div>
+
+        <div class="text-center">
+            <button type="submit" class="btn btn-primary subbtn w-100 submit-btn">Submit</button>
+        </div>
+    </form>
+</div>
+
+
+<!-- Services Section -->
+<section id="work">
+    <div id="service_section">
+        <div class="services-head">
+            <span class="heading-line"></span>
+            <h2>There are three basic elements in yoga</h2>
+            <span class="heading-line"></span>
+        </div>
+        <div class="services_Content">
+            <div class="service_usp">
+                <span>
+                    <img src="~/Content/Img/aasanas.jpg" alt="Asanas" />
+                </span>
+                <p>
+                    Movement
+                    <br />
+                    (Asanas)
+                </p>
+            </div>
+            <div class="service_usp">
+                <span>
+                    <img src="~/Content/Img/pranayam.jpg" alt="Pranayam" />
+                </span>
+                <p>
+                    Breath Control
+                    <br />
+                    (Pranayama)
+                </p>
+            </div>
+            <div class="service_usp">
+                <span>
+                    <img src="~/Content/Img/dhyan.jpg" alt="Dhyan" />
+                </span>
+                <p>
+                    Meditation
+                    <br />
+                    (Dhyana)
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer Logos -->
+<!--<div class="footer_logos">-->
+    @*<img src="~/Content/Img/maxlife.png" class="max_img" />*@
+    <!--<div class="footer_three_logos">
+        <img src="~/Content/Img/work1.png" class="footer_logo" />
+        <img src="~/Content/Img/logo.png" class="footer_logo" />
+        <img src="~/Content/Img/work2.png" class="footer_logo" />
+    </div>
+</div>-->
+
+<!-- Google map API -->
+@*<div style="width: 100%; overflow: hidden; margin: 0; padding: 0;">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3609.4825618325735!2d80.9194444!3d25.2206667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjXCsDEzJzE0LjQiTiA4MMKwNTUnMTAuMCJF!5e0!3m2!1sen!2sin!4v1730205821317!5m2!1sen!2sin" width="100%" height="330" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>*@
+<div class="vivekananda-section">
+    <div class="vivekananda-image">
+        <img src="~/Content/Img/VivekaNanda.jpeg" alt="Swami Vivekananda">
+    </div>
+
+    <div class="vivekananda-content">
+        <h2>Swami Vivekananda: The four Yogas to the path of enlightenment on his birthday</h2>
+
+        <div class="yoga-block">
+            <h3>🕉️ Karma Yoga – The Path of Selfless Action</h3>
+            <p class="quote">"Work and worship are not contrary—they are one and the same."</p>
+            <p><strong>Principle:</strong> Perform your duties without attachment to the results.</p>
+            <p><strong>Goal:</strong> Purify the heart and reduce the ego by dedicating every action to the Divine.</p>
+            <p><strong>Practice:</strong> Serve others selflessly and see God in all beings.</p>
+        </div>
+
+        <div class="yoga-block">
+            <h3>🧠 Jnana Yoga – The Path of Knowledge</h3>
+            <p class="quote">"You are not the body, not the mind, you are the pure, eternal Self."</p>
+            <p><strong>Principle:</strong> Use reason and inquiry to understand the true Self.</p>
+            <p><strong>Goal:</strong> Realize the unity of Atman and Brahman.</p>
+            <p><strong>Practice:</strong> Self-inquiry, study of scriptures, detachment from illusions.</p>
+        </div>
+
+        <div class="yoga-block">
+            <h3>❤️ Bhakti Yoga – The Path of Devotion</h3>
+            <p class="quote">"Love is the highest virtue; love for the sake of love, regardless of return."</p>
+            <p><strong>Principle:</strong> Cultivate unconditional love for God.</p>
+            <p><strong>Goal:</strong> Union with the Divine through loving surrender.</p>
+            <p><strong>Practice:</strong> Prayer, worship, chanting, and seeing God in all beings.</p>
+        </div>
+
+        <div class="yoga-block">
+            <h3>🧘 Raja Yoga – The Path of Meditation</h3>
+            <p class="quote">"Concentration is the essence of all knowledge."</p>
+            <p><strong>Principle:</strong> Control the mind through meditation and discipline.</p>
+            <p><strong>Goal:</strong> Realization of the Self through inner stillness.</p>
+            <p><strong>Practice:</strong> Ashtanga Yoga – Yama, Niyama, Asana, Pranayama, and Dhyana.</p>
+        </div>
+    </div>
+</div>
+
+<!-- jQuery Script -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+            // Smooth scrolling for all anchor links
+            $('.navbar-nav .nav-link').on('click', function (event) {
+                if (this.hash !== "") {
+                    event.preventDefault(); // Prevent default anchor behavior
+
+                    var target = this.hash;
+                    $('html, body').animate(
+                        {
+                            scrollTop: $(target).offset().top - 70 // Adjust offset for fixed navbar
+                        },
+                        800 // Duration in ms (800ms = 0.8s)
+                    );
+
+                    // Update active class for the clicked link
+                    $('.navbar-nav .nav-link').removeClass('active');
+                    $(this).addClass('active');
+                }
+            });
+
+            // Change active link on scroll
+            $(window).on('scroll', function () {
+                var scrollPos = $(document).scrollTop() + 80; // Adjust offset
+
+                $('.navbar-nav .nav-link').each(function () {
+                    var section = $(this.hash);
+
+                    if (
+                        section.position().top <= scrollPos &&
+                        section.position().top + section.height() > scrollPos
+                    ) {
+                        $('.navbar-nav .nav-link').removeClass('active');
+                        $(this).addClass('active');
+                    }
+                });
+            });
+        });
+
+        $(document).ready(function () {
+            const itemWidth = $('.item').outerWidth(true); // Get the width of each item including margin
+            const scrollContainer = $('.item-list');
+
+            // Scroll to the next item
+            $('.next-btn').on('click', function () {
+                scrollContainer.animate({
+                    scrollLeft: '+=' + itemWidth // Move to the next item
+                }, 300); // Animation duration
+            });
+
+            // Scroll to the previous item
+            $('.prev-btn').on('click', function () {
+                scrollContainer.animate({
+                    scrollLeft: '-=' + itemWidth // Move to the previous item
+                }, 300); // Animation duration
+            });
+        });
+
+
+
+    $(document).ready(function () {
+    $('#contactForm').on('submit', function (e) {
+        e.preventDefault();
+
+        const name = $('#name').val().trim();
+        const age = parseInt($('#age').val());
+        const goal = $('#goal').val().trim();
+        const mobile = $('#mobile').val().trim();
+        const email = $('#email').val().trim();
+        const allowMsg = $('#allowMessage').is(':checked');
+
+        // Validation patterns
+        const emailPattern = /^[^\s@@]+@@[^\s@@]+\.[^\s@@]+$/;
+        const mobilePattern = /^\+\d{1,3}\s?\d{10}$/;
+
+        // Validations
+        if (name.length < 2) {
+            alert("Name must be at least 2 characters.");
+            return;
+        }
+
+        if (!(age >= 10 && age <= 99)) {
+            alert("Age must be a 2-digit number (10–99).");
+            return;
+        }
+
+        if (goal.length < 3) {
+            alert("Goal must be at least 3 characters.");
+            return;
+        }
+
+        if (!mobilePattern.test(mobile)) {
+            alert("Use format like +91 9876543210.");
+            return;
+        }
+
+        if (!emailPattern.test(email)) {
+            alert("Please enter a valid email address.");
+            return;
+        }
+
+        if (!allowMsg) {
+            alert("Please allow us to message you.");
+            return;
+        }
+
+        // Create data object
+        const formData = {
+            name: name,
+            age: age,
+            goal: goal,
+            mobile: mobile,
+            email: email,
+            allowMessage: allowMsg
+        };
+
+        console.log("Sending form data:", formData);
+
+        // Submit to ASP.NET MVC controller
+        $.ajax({
+            url: '@Url.Action("SubmitContactForm", "Home")', // Make sure this route matches your controller
+            type: 'POST',
+            data: formData,
+            success: function (res) {
+                if (res.success) {
+                    alert("Form submitted successfully!");
+                    $('#contactForm')[0].reset();
+                } else {
+                    alert("Something went wrong. Please try again.");
+                }
+            },
+            error: function (err) {
+                console.error("Submission error:", err);
+                alert("Failed to submit. Please try again.");
+            }
+        });
+    });
+});
+
+
+    $(document).ready(function () {
+        $('.call-btn').on('click', function () {
+            window.location.href = 'tel: @Model.Contact.Mobile'; // Replace with your phone number
+        });
+
+        $('.job-btn').on('click', function () {
+            // Make an AJAX request to get the phone number from the server
+            $.ajax({
+                url: '@Url.Action("GetPhoneNumber", "Home")',
+                type: 'GET',
+                success: function (response) {
+                    // Trigger the phone call using the 'tel:' protocol
+                    window.location.href = 'tel:' + response.PhoneNumber;
+                },
+                error: function () {
+                    alert('Failed to retrieve the phone number.');
+                }
+            });
+        });
+    });
+</script>

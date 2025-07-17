@@ -1,0 +1,423 @@
+﻿/* Content/layout.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+}
+
+/* Form Container Styles */
+.form-container {
+    width: 100%;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+/* Step Indicator Styles */
+.steps-indicator {
+    gap: 10px;
+}
+
+.step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #a04158;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+    .step.active {
+        background-color: #5a0e25;
+    }
+
+.line {
+    width: 60px;
+    height: 4px;
+    background-color: #ccc;
+}
+
+/* Button Styles */
+.job-btn {
+    background-color: #5a0e25;
+    color: #fff;
+    border-radius: 25px;
+    padding: 10px 20px;
+    border: none;
+}
+
+.submit-btn {
+    background-color: #5a0e25;
+    border: none;
+    border-radius: 25px;
+}
+
+    .submit-btn:hover {
+        background-color: #b01a48;
+    }
+    /* Form Input Styles */
+    .form-control, .form-select {
+        border: 1px solid #a04158;
+        border-radius: 10px;
+    }
+
+/* Body Background */
+body {
+    background-color: #f5f7fa;
+}
+
+.info-section {
+    padding: 4% 5% 2%;
+    text-align: center;
+}
+
+.info-title {
+    font-size: 2.4vw;
+    line-height: 2.8vw;
+    /*font-family: 'fedra-book';*/
+    color: #67122f;
+    margin: 0 0 20px;
+}
+
+.info-decs {
+    /*font-family: 'gilroy-r';*/
+    font-size: 1.4vw;
+    line-height: 2vw;
+}
+
+/*service section css*/
+#service_section {
+    padding: 4% 0;
+    background-color: #67122f;
+    width: 100%; /* Ensure full-width */
+}
+
+.services-head {
+    padding: 0 4%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+    gap: 2vw;
+}
+
+    .services-head h2 {
+        font-size: 2vw;
+        line-height: 2.4vw;
+        color: #fff;
+        text-align: center;
+    }
+
+.heading-line {
+    width: 6vw;
+    height: 0.1vw;
+    background: #fff;
+}
+
+.services_Content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2%; /* Add spacing between items */
+    padding: 2% 10%;
+    flex-wrap: wrap; /* Allows wrapping on smaller screens */
+}
+
+/* Service block styling */
+.service_usp {
+    width: 28%; /* Maintain width on desktop */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin-bottom: 20px;
+}
+
+    /* Circle container for icons */
+    .service_usp span {
+        background: rgba(255, 255, 255, 0.75); /* Semi-transparent white */
+        border-radius: 50%;
+        width: 5vw;
+        height: 5vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+
+        .service_usp span img {
+            max-width: 100%;
+            border-radius: inherit;
+            height: auto;
+        }
+
+    .service_usp p {
+        font-size: 1.4vw;
+        line-height: 2vw;
+        color: #fff;
+        margin: 10px 0 0;
+    }
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .services_Content {
+        flex-direction: column; /* Stack vertically on small screens */
+        align-items: center;
+        padding: 2% 5%; /* Adjust padding */
+    }
+
+    .service_usp {
+        width: 100%; /* Full width on mobile */
+        margin-bottom: 20px;
+    }
+
+        .service_usp p {
+            font-size: 4vw; /* Adjust font size */
+            line-height: 6vw;
+        }
+
+    .services-head h2 {
+        font-size: 5vw;
+        line-height: 6vw;
+    }
+
+    .heading-line {
+        width: 20vw;
+        height: 0.5vw;
+    }
+
+    .service_usp span {
+        width: 15vw;
+        height: 15vw;
+    }
+}
+
+
+    /*footer Logos*/
+.footer_logos {
+    padding: 3% 10%;
+    text-align: center;
+}
+
+.footer_logos img.max_img {
+    width: 100%;
+}
+
+.footer_three_logos {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0 0 0;
+}
+
+.footer_logo {
+    max-width: 25%;
+}
+
+.hero_banner img {
+    width: 100%;
+}
+
+.hero_banner img.for-mob {
+    display: none;
+}
+
+.contact_container {
+    background: #fff;
+    padding: 50px;
+    margin: 0 150px 0 150px;
+    box-shadow: 0 0 30px #96969687;
+}
+
+@media (max-width: 768px) {
+    .contact_container {
+        margin: 0 50px;
+        padding: 30px;
+    }
+}
+
+/* Media query for mobile phones (576px and below) */
+@media (max-width: 576px) {
+    .contact_container {
+        margin: 0 20px;
+        padding: 20px;
+    }
+}
+/* Footer Background */
+.bg-dark-maroon {
+    background-color: #5a0e25;
+}
+
+/* Social Media Icon Styling */
+.social-icons a {
+    font-size: 30px;
+    text-decoration: none;
+}
+
+.footer p, .footer h5 {
+    margin-bottom: 8px;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 5px 2px;
+}
+
+    .fa:hover {
+        opacity: 0.9;
+        
+    }
+
+.fa-linkedin, .fa-youtube, .fa-twitter, .fa-instagram, .fa-facebook {
+    /*background: red;*/
+    color: white;
+}
+
+/* Container for fixed buttons */
+.fixed-buttons {
+    position: fixed;
+    right: 0; /* Align to the right edge */
+    top: 35%; /* Adjust vertical position */
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between buttons */
+    z-index: 9999; /* Ensure the buttons are on top */
+}
+
+/* General Button Styles */
+.btnside {
+    writing-mode: vertical-rl; /* Rotate text vertically */
+    transform: rotate(180deg); /* Correct text orientation */
+    padding: 10px 0;
+    width: 30px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    text-align: center;
+    font-size: 12px;
+    color: white;
+}
+
+/* Job Button Styling */
+.job-btn {
+    background-color: #5a0e25; /* Orange color */
+}
+
+/* Call Button Styling */
+.call-btn {
+    background-color: #5a0e25; /* Yellow color */
+}
+
+/* Hover Effects */
+.job-btn:hover {
+    background-color: #b01a48;
+}
+
+.call-btn:hover {
+    background-color: #b01a48;
+}
+
+/* Responsive Spacing */
+@media (max-width: 768px) {
+    .footer .text-center {
+        text-align: left !important;
+    }
+}
+.scroll-container {
+    display: flex;
+    align-items: center;
+    position: relative; /* For proper positioning of arrows */
+    margin: 0 30px 0 30px;
+}
+
+.item-list {
+    display: flex; /* Use flexbox for horizontal layout */
+    overflow: hidden; /* Hide scrollbar */
+    white-space: nowrap; /* Prevent wrapping */
+    flex: 1; /* Ensure the item-list takes up available space */
+    padding: 10px 0; /* Add some padding to the top and bottom */
+}
+
+.item-list::-webkit-scrollbar {
+    display: none;
+}
+
+.item {
+    display: inline-block;
+    margin-right: 20px;
+    text-align: center;
+    background-color: #5a0e25;
+    color: white;
+    border-radius: 7px;
+    max-width: 300px;
+}
+
+    .item img {
+        max-width: 300px;
+        height: 100%; /* Maintain aspect ratio */
+        max-height: 100px;
+        margin-bottom: 20px;
+    }
+
+    .item h5 {
+        margin-bottom: 10px;
+        font-size: medium;
+        font-weight: bold;
+    }
+
+    .item p {
+        white-space: normal; /* Allow multi-line text */
+        overflow: visible; /* Ensure content is visible */
+        line-height: 1.5; /* Adjust line height for readability */
+        margin-bottom: 20px;
+        font-size: small;
+    }
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.prev-btn {
+    left: -20px; /* Position the left arrow */
+}
+
+.next-btn {
+    right: -20px; /* Position the right arrow */
+}
+
+    .prev-btn:hover, .next-btn:hover {
+        background-color: #ececec;
+    }
+
+    .prev-btn i, .next-btn i {
+        font-size: 24px;
+        color: #5a0e25; /* Icon color */
+    }
+
+
+section {
+    padding-top: 100px; /* Adjust according to your navbar height */
+    margin-top: -70px; /* Negative margin to avoid extra space */
+}
+

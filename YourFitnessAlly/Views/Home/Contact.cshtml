@@ -1,0 +1,51 @@
+﻿@using YourFitnessAlly.Models
+@model YourFitnessAlly.Models.ProjectViewModel
+
+@{
+    ViewBag.Title = "Contact Us";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    html {
+        scroll-behavior: smooth;
+    }
+</style>
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="text-center mb-4">
+                <h1 class="display-5">🧘‍♀️ Contact Us</h1>
+                <h4 class="text-primary">Let’s Connect with Purpose and Positivity</h4>
+                <p class="mt-3">
+                    Whether you’re here to explore yoga for the first time, seek relief from back pain or stress, or simply want to feel better inside and out — I’m so glad you’ve found your way here.
+                </p>
+                <p>
+                    If you have any questions, want to book a free trial session, or just need guidance on where to begin, I’m here for you.
+                </p>
+            </div>
+
+            <div class="mb-4">
+                <h5>📬 Reach Out Anytime</h5>
+                <p>📧 Email: @Model.Contact.Email</p>
+                <p>📱 Instagram DM: <a href="@Model.SocialLinks.Instagram" target="_blank" rel="noopener noreferrer">Roshni Joshi</a></p>
+                <p>💬 I usually respond within 24 hours. For urgent messages, please DM on Instagram.</p>
+            </div>
+
+            <div class="mb-4">
+                <h5>✨ Want to Begin Your Yoga Journey?</h5>
+                <p>➡️ <a href="@Url.Action("Index", "Home")#contactFormSection" class="text-decoration-underline">Fill out the contact form
+                     </a> to claim your free trial session or book a personalized 1:1 yoga consultation.</p>
+                <p>Let’s build your strength, restore your calm, and find your flow — together.</p>
+            </div>
+
+            <div class="text-end mt-5">
+                <p class="fst-italic">With love and light,</p>
+                <h5 class="fw-bold">Roshni Joshi</h5>
+                <p>Your Fitness Ally</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ✅ jQuery Logic for Popup -->
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>

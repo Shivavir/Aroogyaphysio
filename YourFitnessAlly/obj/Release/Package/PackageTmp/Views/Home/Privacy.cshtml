@@ -1,0 +1,29 @@
+﻿
+@using YourFitnessAlly.Models
+@model YourFitnessAlly.Models.ProjectViewModel
+
+@{
+    ViewBag.Title = "Privacy Policy";
+    Layout = "~/Views/Shared/_Layout.cshtml"; // Update as per your layout
+}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-10 col-md-12">
+            <div class="bg-light p-4 p-md-5 rounded shadow-sm">
+                <h2 class="mb-4 text-primary">Privacy Policy</h2>
+
+                <p>At <strong>Roshni Joshi Yoga</strong>, we value your privacy. This policy outlines how we collect, use, and protect your data.</p>
+
+                <ul class="list-group list-group-flush mb-4">
+                    <li class="list-group-item">1. We collect your name, email, and phone number only when you voluntarily fill out a form on the site.</li>
+                    <li class="list-group-item">2. Your data is never sold or shared with third-party services without your consent.</li>
+                    <li class="list-group-item">3. All communication is secure and confidential.</li>
+                    <li class="list-group-item">4. You may request to delete your data at any time.</li>
+                </ul>
+
+                <p>If you have questions regarding privacy, feel free to reach out via the <a href="@Url.Action("Contact", "Home")" class="text-decoration-underline text-dark">contact page</a>.</p>
+            </div>
+        </div>
+    </div>
+</div>

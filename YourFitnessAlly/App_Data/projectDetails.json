@@ -1,0 +1,17 @@
+﻿{
+  "appName": "Your Fitness Ally",
+  "details": {
+    "title": "Your Fitness Ally"
+  },
+  "contact": {
+    "email": "yogini@yourfitnessally.com",
+    "mobile": "+91 93159 47853"
+  },
+  "socialLinks": {
+    "instagram": "https://www.instagram.com/yogini_roshni"
+  },
+  "copyright": {
+    "yourFitnessAlly": "Your Fitness Ally. All rights reserved",
+    "flutxTechnology": "Powered by: FlutX Technology"
+  }
+}
